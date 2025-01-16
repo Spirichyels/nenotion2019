@@ -12,8 +12,9 @@ import textAreaTest from "./PageTest/textAreaTest";
 import { connect, Provider } from "react-redux";
 import store from "./store/react-store";
 import PageTest3 from "./PageTest/PageTest3";
-import { updateNewText } from "./store/testReducers";
+import { getText, updateNewText } from "./store/testReducers";
 import { localApi } from "./localApi/localApi";
+import TextAreaContainer from "./localApi/textArea/TextAreaContainer";
 
 class App extends React.Component {
   render() {
@@ -33,11 +34,20 @@ class App extends React.Component {
           <div>
             <button onClick={onPlay}>Play</button>
           </div>
-
-          <PageTest3
-            text={this.props.text}
-            updateNewText={this.props.updateNewText}
-          />
+          <div>
+            {/* <PageTest3
+              text={this.props.text}
+              updateNewText={this.props.updateNewText}
+              getText={this.props.getText}
+            /> */}
+          </div>
+          <div>
+            <TextAreaContainer
+              text={this.props.text}
+              updateNewText={this.props.updateNewText}
+              getText={this.props.getText}
+            ></TextAreaContainer>
+          </div>
         </div>
         <div></div>
         <Route path="/page1" render={() => <PageTest1 />} />
@@ -54,7 +64,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const AppConnect = connect(mapStateToProps, { updateNewText })(App);
+const AppConnect = connect(mapStateToProps, { updateNewText, getText })(App);
 
 const AppWithRouter = () => {
   return (

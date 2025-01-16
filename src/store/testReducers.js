@@ -4,7 +4,7 @@ const SET_TEXT = "UPDATE_NEW_TEXT";
 const UPDATE_NEW_TEXT = "UPDATE_NEW_TEXT";
 
 let initialState = {
-  text: "Я текст меня можно вводить 2",
+  text: "Текст из initialState",
 };
 
 const testReducers = (state = initialState, action) => {
@@ -30,21 +30,23 @@ export const setText = (text) => ({
   text,
 });
 
-// export const updateNewText = (text) => ({
-//   type: UPDATE_NEW_TEXT,
-//   text,
-// });
+export const updateNewTextd = (text) => ({
+  type: UPDATE_NEW_TEXT,
+  text,
+});
 
 export const getText = () => async (dispatch) => {
-  let response = await localApi.getAllText();
-
-  dispatch(setText(response));
+  //let response = await localApi.getAllText();
+  //console.log(localApi.getAllText());
+  dispatch(setText(localApi.getAllText()));
 };
 
-export const updateNewText = () => async (dispatch) => {
-  let response = await localApi.updateAllText(dispatch);
+export const updateNewText = (text) => async (dispatch) => {
+  //debugger;
+  //localApi.updateAllText(text);
+  let response = await localApi.updateAllText(text);
 
-  if (response == 0) dispatch(setText(dispatch));
+  return dispatch(setText(text));
 };
 
 export default testReducers;

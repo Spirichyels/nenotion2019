@@ -7,8 +7,6 @@ class Profiletext extends React.Component {
   };
 
   activateEditMode = () => {
-    debugger;
-
     this.setState({
       editMode: true,
       text: this.props.text,
@@ -29,8 +27,7 @@ class Profiletext extends React.Component {
     });
   };
   componentDidMount() {
-    // console.log("1", this.props.text);
-    // console.log("2", this.state);
+    this.props.getText();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -43,6 +40,7 @@ class Profiletext extends React.Component {
   render() {
     // console.log("1", this.props);
     // console.log("2", this.state);
+    //console.log("render PageTest");
     return (
       <div>
         {!this.state.editMode === true ? (
