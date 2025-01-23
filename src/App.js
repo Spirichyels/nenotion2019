@@ -15,6 +15,7 @@ import PageTest3 from "./PageTest/PageTest3";
 import { getText, updateNewText } from "./store/testReducers";
 import { localApi } from "./localApi/localApi";
 import TextAreaContainer from "./localApi/textArea/TextAreaContainer";
+import TextAreaContainer2 from "./localApi/textArea/TextAreaContainer2";
 
 class App extends React.Component {
   render() {
@@ -22,7 +23,8 @@ class App extends React.Component {
     //console.log(this.props.text);
 
     const onPlay = () => {
-      console.log(localApi.getAllText());
+      console.log("api", localApi.getAllText());
+      console.log("initialState", this.props.text);
     };
 
     return (
@@ -42,11 +44,11 @@ class App extends React.Component {
             /> */}
           </div>
           <div>
-            <TextAreaContainer
-              text={this.props.text}
-              updateNewText={this.props.updateNewText}
-              getText={this.props.getText}
-            ></TextAreaContainer>
+            <TextAreaContainer></TextAreaContainer>
+          </div>
+          ---------------------------
+          <div>
+            <TextAreaContainer2></TextAreaContainer2>
           </div>
         </div>
         <div></div>
@@ -54,6 +56,11 @@ class App extends React.Component {
         <Route path="/page2" render={() => <PageTest2 />} />
       </div>
     );
+  }
+
+  componentDidMount() {
+    console.log("apiText:", localApi.getAllText());
+    console.log("initialState: ", this.props.text);
   }
 }
 

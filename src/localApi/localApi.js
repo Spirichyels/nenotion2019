@@ -13,15 +13,15 @@
 // tasks.forEach((task) => renderTask(task));
 
 export const localApi = {
-  text: "Текст из initialStateasd\nasdasdasd\nasdasdasd\nasdasdasd\nasdassssssasd\n",
+  apiText: "gthdfzd\nasdasdasd\nasdasdasd\nasdasdasd\nasdassssssasd\n",
 
   getAllText() {
-    return this.text;
+    return this.apiText;
   },
 
   updateAllText(text) {
     //debugger;
-    this.text = text;
+    this.apiText = text;
     //console.log("text: ", text);
     //console.log("localApi.text: ", localApi.text);
 

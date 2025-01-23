@@ -20,7 +20,7 @@ class Profiletext extends React.Component {
     //debugger;
     this.props.updateNewText(this.state.text);
   };
-
+ 
   ontextChange = (e) => {
     this.setState({
       text: e.currentTarget.value,
