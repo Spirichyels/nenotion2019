@@ -1,14 +1,15 @@
 import React from "react";
 
-const TextArea = ({ handleSubmit, text }) => {
+const TextArea = ({ text, handleSubmit, handleChange }) => {
   return (
     <div>
       <button type="submit">Save post</button>
       <form method="post" onSubmit={handleSubmit}>
         <textarea
           //onBlur={deactivateMode}
+          onChange={handleChange}
           name="textName"
-          defaultValue={text}
+          value={text}
         ></textarea>
       </form>
     </div>

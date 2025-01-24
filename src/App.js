@@ -4,20 +4,21 @@ import {
   BrowserRouter,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
-import PageTest1 from "./PageTest/PageTest1";
-import PageTest2 from "./PageTest/PageTest2";
+import PageTest1 from "./Ненужный код/PageTest1";
+import PageTest2 from "./Ненужный код/PageTest2";
 import NavTest from "./PageTest/navTest";
 
-import textAreaTest from "./PageTest/textAreaTest";
 import { connect, Provider } from "react-redux";
 import store from "./store/react-store";
-import PageTest3 from "./PageTest/PageTest3";
+
 import { getText, updateNewText } from "./store/testReducers";
 import { localApi } from "./localApi/localApi";
 import TextAreaContainer from "./localApi/textArea/TextAreaContainer";
-import TextAreaContainer2 from "./localApi/textArea/TextAreaContainer2";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     console.log("render App");
     //console.log(this.props.text);
@@ -36,20 +37,12 @@ class App extends React.Component {
           <div>
             <button onClick={onPlay}>Play</button>
           </div>
-          <div>
-            {/* <PageTest3
-              text={this.props.text}
-              updateNewText={this.props.updateNewText}
-              getText={this.props.getText}
-            /> */}
-          </div>
+          <div></div>
           <div>
             <TextAreaContainer></TextAreaContainer>
           </div>
           ---------------------------
-          <div>
-            <TextAreaContainer2></TextAreaContainer2>
-          </div>
+          <div>{/* <TextAreaContainer2></TextAreaContainer2> */}</div>
         </div>
         <div></div>
         <Route path="/page1" render={() => <PageTest1 />} />

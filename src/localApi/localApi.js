@@ -13,7 +13,7 @@
 // tasks.forEach((task) => renderTask(task));
 
 export const localApi = {
-  apiText: "gthdfzd\nasdasdasd\nasdasdasd\nasdasdasd\nasdassssssasd\n",
+  apiText: "1 строчка\n2 строчка\n3 строчка\n4 строчка\n5 строчка\n",
 
   getAllText() {
     return this.apiText;
