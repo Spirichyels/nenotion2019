@@ -1,0 +1,24 @@
+.item {
+	/* background-color: blue */
+}
+
+.item textarea {
+
+	/* background-color: red; */
+	/* width: 100;
+	height: 50; */
+	/* border: none;
+	outline: none; */
+	/* display: inline-table; */
+	
+	
+}
+
+.item textarea:nth-child() {
+	/* size: 50px; */
+}
+
+.rows {
+	/* border: 2px; */
+	
+}

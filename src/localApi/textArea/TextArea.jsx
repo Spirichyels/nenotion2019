@@ -1,18 +1,18 @@
 import React from "react";
+import styles from "./TextArea.module.css";
 
-const TextArea = ({ text, handleSubmit, handleChange }) => {
+const TextArea = ({ text, OnBlurSubmit, handleChange }) => {
   return (
-    <div>
-      <button type="submit">Save post</button>
-      <form method="post" onSubmit={handleSubmit}>
+    <form onBlur={OnBlurSubmit}>
+      <div className={styles.item}>
         <textarea
-          //onBlur={deactivateMode}
+          rows={5}
+          cols={50}
           onChange={handleChange}
-          name="textName"
           value={text}
         ></textarea>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };
 

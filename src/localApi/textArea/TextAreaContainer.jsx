@@ -4,26 +4,7 @@ import { connect } from "react-redux";
 import { getText, updateNewText } from "../../store/testReducers";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 import { compose } from "redux";
-import PageTest5 from "../../PageTest/PageTest5";
-
-function handleSubmit(e) {
-  // Prevent the browser from reloading the page
-  e.preventDefault();
-
-  // Read the form data
-  const form = e.target;
-  const formData = new FormData(form);
-
-  // You can pass formData as a fetch body directly:
-  //fetch("/some-api", { method: form.method, body: formData });
-
-  // Or you can work with it as a plain object:
-  const formJson = Object.fromEntries(formData.entries());
-
-  this.updateNewText(formJson);
-  //debugger;
-  console.log("inputtex:", formJson);
-}
+import TextAreaComponent from "./TextAreaComponent";
 
 class TextAreaClass extends React.Component {
   componentDidMount() {
@@ -32,11 +13,11 @@ class TextAreaClass extends React.Component {
   render() {
     return (
       <div>
-        <PageTest5
+        <TextAreaComponent
           text={this.props.text}
           getText={this.props.getText}
           updateNewText={this.props.updateNewText}
-        ></PageTest5>
+        ></TextAreaComponent>
       </div>
     );
   }

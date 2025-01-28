@@ -8,4 +8,4 @@ import { render } from "react-dom";
 
 //import reportWebVitals from "./reportWebVitals";
 
-ReactDOM.render(<MyComponent />, document.getElementById("root"));
+ReactDOM.render(<AppWithRouter />, document.getElementById("root"));

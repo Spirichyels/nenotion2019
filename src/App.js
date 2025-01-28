@@ -14,6 +14,7 @@ import store from "./store/react-store";
 import { getText, updateNewText } from "./store/testReducers";
 import { localApi } from "./localApi/localApi";
 import TextAreaContainer from "./localApi/textArea/TextAreaContainer";
+import Stroka from "./PageTest/Stroka";
 
 class App extends React.Component {
   constructor(props) {
@@ -38,7 +39,8 @@ class App extends React.Component {
             <button onClick={onPlay}>Play</button>
           </div>
           <div></div>
-          <div>
+          <div contentEditable={true}>
+            <TextAreaContainer></TextAreaContainer>
             <TextAreaContainer></TextAreaContainer>
           </div>
           ---------------------------
