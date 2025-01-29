@@ -13,15 +13,15 @@ import store from "./store/react-store";
 
 import { getText, updateNewText } from "./store/testReducers";
 import { localApi } from "./localApi/localApi";
-import TextAreaContainer from "./localApi/textArea/TextAreaContainer";
-import Stroka from "./PageTest/Stroka";
+import TextAreaComponent2 from "./PageTest/TextAreaComponent2";
+import TextAreaContainer2 from "./PageTest/TextAreaContainer2";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
-    console.log("render App");
+    //console.log("render App");
     //console.log(this.props.text);
 
     const onPlay = () => {
@@ -39,9 +39,8 @@ class App extends React.Component {
             <button onClick={onPlay}>Play</button>
           </div>
           <div></div>
-          <div contentEditable={true}>
-            <TextAreaContainer></TextAreaContainer>
-            <TextAreaContainer></TextAreaContainer>
+          <div>
+            <TextAreaContainer2></TextAreaContainer2>
           </div>
           ---------------------------
           <div>{/* <TextAreaContainer2></TextAreaContainer2> */}</div>
@@ -54,8 +53,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log("apiText:", localApi.getAllText());
-    console.log("initialState: ", this.props.text);
+    //console.log("apiText:", localApi.getAllText());
+    //console.log("initialState: ", this.props.text);
   }
 }
 

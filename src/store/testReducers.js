@@ -2,9 +2,19 @@ import { localApi } from "../localApi/localApi";
 
 const SET_TEXT = "UPDATE_NEW_TEXT";
 const UPDATE_NEW_TEXT = "UPDATE_NEW_TEXT";
+const UPDATE_NEW_STROKA = "UPDATE_NEW_STROKA";
+const ADD_STROKA = "ADD_STROKA";
 
 let initialState = {
   text: "Текст из initialState",
+  stroks: [
+    { text: "1 строчка", color: "red" },
+    { text: "2 строчка", color: "black" },
+    { text: "3 строчка", color: "black" },
+    { text: "4 строчка", color: "black" },
+    { text: "5 строчка", color: "black" },
+  ],
+  newText: "newTExt",
 };
 
 const testReducers = (state = initialState, action) => {
@@ -20,11 +30,27 @@ const testReducers = (state = initialState, action) => {
         ...state,
         text: action.text,
       };
+
+    case ADD_STROKA:
+      let newStroka = {
+        id: state.posts.length + 1,
+        text: action.newText,
+      };
+      return {
+        ...state,
+        stroks: [...state.stroks, newStroka],
+      };
+    case UPDATE_NEW_STROKA:
+      return {
+        ...state,
+        newText: action.text,
+      };
     default:
       return state;
   }
 };
 
+/////////////////////////////////
 export const setText = (text) => ({
   type: SET_TEXT,
   text,
@@ -32,6 +58,16 @@ export const setText = (text) => ({
 
 export const updateNewTextd = (text) => ({
   type: UPDATE_NEW_TEXT,
+  text,
+});
+///////////////////////////////////////
+export const addStroka = (text) => ({
+  type: ADD_STROKA,
+  text,
+});
+
+export const updateNewStroka = (text) => ({
+  type: UPDATE_NEW_STROKA,
   text,
 });
 

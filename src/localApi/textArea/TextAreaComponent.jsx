@@ -1,6 +1,7 @@
 import React from "react";
 import TextArea from "./TextArea";
 import Stroka from "../../PageTest/Stroka";
+import ArrStrok from "../../PageTest/ArrStrok";
 
 class PageTest5 extends React.Component {
   constructor(props) {
@@ -38,12 +39,13 @@ class PageTest5 extends React.Component {
           OnBlurSubmit={this.OnBlurSubmit}
           handleChange={this.handleChange}
         ></TextArea> */}
+        {/* <ArrStrok></ArrStrok> */}
 
-        <Stroka
+        {/* <Stroka
           text={this.state.text}
           OnBlurSubmit={this.OnBlurSubmit}
           handleChange={this.handleChange}
-        ></Stroka>
+        ></Stroka> */}
       </div>
     );
   }
