@@ -6,6 +6,8 @@ import MyComponent from "./PageTest/MyComponent/MyComponent";
 import ReactDOM from "react-dom";
 import { render } from "react-dom";
 import App2 from "./PageTest/MyComponent/App2";
+import App3 from "./PageTest/MyComponent/App3";
+import App4 from "./PageTest/MyComponent/App4";
 
 //import reportWebVitals from "./reportWebVitals";
 

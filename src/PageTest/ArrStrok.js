@@ -3,33 +3,36 @@ import React, { useState } from "react";
 const ArrStrok = (props) => {
   const [values, setValues] = useState(props.stroks);
 
-  //console.log(values);
-  //console.log(props.stroks);
+  const [divE, setDivE] = useState(null);
 
-  const handleInput = (index, event) => {
-    console.log(index);
-    debugger;
-    const newValues = [...values];
-    //newValues[index].text = event.target.innerText;
+  const OnBlurSubmit = (event) => {
+    //let x = event.currentTarget.children[divE].innerHTML;
 
-    setValues(newValues);
+    let newArr = [];
+    values.map((item, index) => {
+      item !== event.currentTarget.children[index].innerHTML
+        ? //? newArr.push(event.currentTarget.children[index].innerHTML)
+          (item.text = event.currentTarget.children[index].innerHTML)
+        : (item.text = item.text);
+    });
   };
 
-  let handleChange = (event) => {
-    debugger;
-    let newText = event.currentTarget.value;
-    //this.setState({ text: newText });
-  };
-  handleChange = handleChange.bind(this);
+  //   const OnBlurSubmit = (event) => {
+  //     let x = event.currentTarget.children[divE].innerHTML;
+  //     if (x !== values[divE].text) {
+  //       values[divE].text = x;
+  //       console.log(values);
+  //     }
+  //   };
 
-  const OnBlurSubmit = (index, event) => {
-    console.log(index, event);
-    event.preventDefault();
-    props.updateNewText(values);
+  const onClickDiv = (event) => {
+    setDivE(event.currentTarget.accessKey);
   };
 
   return (
     <div
+      contentEditable="true"
+      onBlur={OnBlurSubmit}
       role="textbox"
       style={{
         display: "block",
@@ -43,12 +46,13 @@ const ArrStrok = (props) => {
       {values.map((item, index) => (
         <div
           key={index}
-          onClick={handleChange}
+          onClick={onClickDiv}
           style={{
             color: item.color,
             whiteSpace: "pre-line",
             cursor: "pointer",
           }}
+          accessKey={index}
         >
           {item.text}
         </div>
